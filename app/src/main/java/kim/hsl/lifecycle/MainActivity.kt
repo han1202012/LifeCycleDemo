@@ -11,11 +11,4 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
-
-    fun startLifeCycleService(view: View) {
-        startService(Intent(this, MyLifecycleService::class.java))
-    }
-    fun stopLifeCycleService(view: View) {
-        stopService(Intent(this, MyLifecycleService::class.java))
-    }
 }

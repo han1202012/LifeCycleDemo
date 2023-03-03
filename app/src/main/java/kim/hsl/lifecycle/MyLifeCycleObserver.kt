@@ -6,15 +6,35 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 class MyLifeCycleObserver: LifecycleObserver {
+    val TAG = "LifecycleDemo"
+
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun serviceStart(){
-        // 服务启动
-        Log.i("LifeCycleDemo", "MyService ON_CREATE")
+    fun onCreate() {
+        Log.i(TAG, "Lifecycle.Event.ON_CREATE")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    fun onStart() {
+        Log.i(TAG, "Lifecycle.Event.ON_START")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    fun onResume() {
+        Log.i(TAG, "Lifecycle.Event.ON_RESUME")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    fun onPause() {
+        Log.i(TAG, "Lifecycle.Event.ON_PAUSE")
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    fun onStop() {
+        Log.i(TAG, "Lifecycle.Event.ON_STOP")
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    fun serviceStop(){
-        // 服务停止
-        Log.i("LifeCycleDemo", "MyService ON_DESTROY")
+    fun onDestroy() {
+        Log.i(TAG, "Lifecycle.Event.ON_DESTROY")
     }
 }
